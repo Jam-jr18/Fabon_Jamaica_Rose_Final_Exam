@@ -1,183 +1,109 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Student Information Management System</title>
+  <title>Student Management System</title>
 
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- Sidebar -->
-<div class="sidebar">
-  <div class="logo">
-    <div class="logo-icon">🎓</div>
-    <div>
-      <h2>SIMS</h2>
+  <!-- Sidebar -->
+  <div class="sidebar">
+
+    <div class="logo">
+      <h2>🎓 SIMS</h2>
       <p>Student System</p>
     </div>
+
+    <ul class="menu">
+
+      <li>
+        <button onclick="showPage('dashboard')">
+          🏠 Dashboard
+        </button>
+      </li>
+
+      <li>
+        <button onclick="showPage('register')">
+          ➕ Register
+        </button>
+      </li>
+
+      <li>
+        <button onclick="showPage('students')">
+          👥 Students
+        </button>
+      </li>
+
+    </ul>
+
   </div>
 
-  <ul class="menu">
-    <li>
-      <a class="menu-link active" data-page="home" onclick="navigateTo('home')">
-        🏠 Home
-      </a>
-    </li>
+  <!-- Main -->
+  <div class="main">
 
-    <li>
-      <a class="menu-link" data-page="register" onclick="navigateTo('register')">
-        ➕ Register
-      </a>
-    </li>
+    <!-- Dashboard -->
+    <section id="dashboard" class="page active">
 
-    <li>
-      <a class="menu-link" data-page="students" onclick="navigateTo('students')">
-        👥 Students
-      </a>
-    </li>
-  </ul>
-</div>
+      <div class="hero">
+        <div>
+          <h1>Student Information Management System</h1>
 
-<!-- Main -->
-<div class="main">
+          <p>
+            Modern dashboard design with CRUD functionality.
+          </p>
 
-  <!-- Topbar -->
-  <div class="topbar">
-    <h1>Student Information Management System</h1>
-
-    <div class="top-actions">
-      <button class="theme-btn">✨ Modern UI</button>
-    </div>
-  </div>
-
-  <!-- HOME -->
-  <section id="home-page" class="page active">
-
-    <div class="hero">
-      <div class="hero-content">
-        <span class="badge">⚡ Student Dashboard</span>
-
-        <h1>Manage Students <br> Easily & Faster</h1>
-
-        <p>
-          A modern student management system with CRUD functionality,
-          elegant dashboard, responsive tables, and clean user interface.
-        </p>
-
-        <div class="hero-buttons">
-          <button class="btn primary" onclick="navigateTo('register')">
-            ➕ Add Student
+          <button onclick="showPage('register')">
+            Add Student
           </button>
+        </div>
 
-          <button class="btn secondary" onclick="navigateTo('students')">
-            👥 View Students
-          </button>
+        <div class="hero-icon">
+          🎓
         </div>
       </div>
 
-      <div class="hero-image">
-        🎓
-      </div>
-    </div>
+      <div class="stats">
 
-    <!-- Stats -->
-    <div class="stats">
-
-      <div class="card stat-card">
-        <div class="stat-icon blue">👥</div>
-
-        <div>
-          <h2 id="total-students">0</h2>
+        <div class="card">
+          <h2 id="totalStudents">0</h2>
           <p>Total Students</p>
         </div>
-      </div>
 
-      <div class="card stat-card">
-        <div class="stat-icon purple">📘</div>
-
-        <div>
+        <div class="card">
           <h2>5</h2>
           <p>Courses</p>
         </div>
-      </div>
 
-      <div class="card stat-card">
-        <div class="stat-icon pink">⚡</div>
-
-        <div>
+        <div class="card">
           <h2>CRUD</h2>
           <p>Operations</p>
         </div>
+
       </div>
 
-    </div>
+    </section>
 
-    <!-- Features -->
-    <div class="section-title">
-      <h2>System Features</h2>
-      <p>Modern student record management tools</p>
-    </div>
+    <!-- Register -->
+    <section id="register" class="page">
 
-    <div class="features">
+      <div class="form-container">
 
-      <div class="card feature-card">
-        <div class="feature-icon">➕</div>
-        <h3>Create</h3>
-        <p>Register new students quickly.</p>
-      </div>
+        <h2>Register Student</h2>
 
-      <div class="card feature-card">
-        <div class="feature-icon">📖</div>
-        <h3>Read</h3>
-        <p>View all student information.</p>
-      </div>
+        <form id="studentForm">
 
-      <div class="card feature-card">
-        <div class="feature-icon">✏️</div>
-        <h3>Update</h3>
-        <p>Edit existing records anytime.</p>
-      </div>
+          <input type="text" id="studentId" placeholder="Student ID" required>
 
-      <div class="card feature-card">
-        <div class="feature-icon">🗑️</div>
-        <h3>Delete</h3>
-        <p>Remove student records safely.</p>
-      </div>
+          <input type="text" id="fullName" placeholder="Full Name" required>
 
-    </div>
-
-  </section>
-
-  <!-- REGISTER -->
-  <section id="register-page" class="page">
-
-    <div class="page-header">
-      <h2>➕ Register Student</h2>
-      <p>Add a new student record</p>
-    </div>
-
-    <form id="register-form" class="card form-card" onsubmit="handleRegister(event)">
-
-      <div class="grid">
-
-        <div class="input-group">
-          <label>Student ID</label>
-          <input type="text" id="reg-sid" required>
-        </div>
-
-        <div class="input-group">
-          <label>Full Name</label>
-          <input type="text" id="reg-name" required>
-        </div>
-
-        <div class="input-group">
-          <label>Course</label>
-
-          <select id="reg-course" required>
+          <select id="course" required>
             <option value="">Select Course</option>
             <option>BS Computer Science</option>
             <option>BS Information Technology</option>
@@ -185,36 +111,69 @@
             <option>BS Computer Engineering</option>
             <option>BS Data Science</option>
           </select>
-        </div>
 
-        <div class="input-group">
-          <label>Year Level</label>
-
-          <select id="reg-year">
-            <option value="1">1st Year</option>
-            <option value="2">2nd Year</option>
-            <option value="3">3rd Year</option>
-            <option value="4">4th Year</option>
+          <select id="yearLevel" required>
+            <option value="">Year Level</option>
+            <option>1st Year</option>
+            <option>2nd Year</option>
+            <option>3rd Year</option>
+            <option>4th Year</option>
           </select>
+
+          <input type="email" id="email" placeholder="Email Address" required>
+
+          <button type="submit">
+            Save Student
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+    <!-- Students -->
+    <section id="students" class="page">
+
+      <div class="table-container">
+
+        <div class="table-header">
+
+          <h2>Student Records</h2>
+
+          <input
+            type="text"
+            id="search"
+            placeholder="Search..."
+            onkeyup="searchStudents()"
+          >
+
         </div>
 
+        <table>
+
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Course</th>
+              <th>Year</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="studentTable"></tbody>
+
+        </table>
+
       </div>
 
-      <div class="input-group">
-        <label>Email Address</label>
-        <input type="email" id="reg-email" required>
-      </div>
+    </section>
 
-      <div class="form-actions">
-        <button type="reset" class="btn secondary">
-          Reset
-        </button>
+  </div>
 
-        <button type="submit" class="btn primary">
-          Save Student
-        </button>
-      </div>
+  <script src="script.js"></script>
 
-    </form>
-
- 
+</body>
+</html>
