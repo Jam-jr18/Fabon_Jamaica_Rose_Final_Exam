@@ -1,63 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>SIMS Dashboard</title>
-
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-
 <body>
+
+    <!-- Animated Background -->
+    <div class="bg-blur bg1"></div>
+    <div class="bg-blur bg2"></div>
 
     <!-- NAVBAR -->
     <nav class="navbar">
+
         <div class="nav-container">
 
             <div class="nav-brand">
-                <div class="nav-icon">🎓</div>
+
+                <div class="nav-icon">
+                    🎓
+                </div>
 
                 <div>
                     <h1>SIMS</h1>
-                    <p>Student Information Management</p>
+                    <p>Cyber Student Dashboard</p>
                 </div>
+
             </div>
 
             <ul class="nav-links">
+
                 <li>
                     <a href="#" class="nav-link active" data-page="home">
-                        Home
+                        🏠 Home
                     </a>
                 </li>
 
                 <li>
                     <a href="#" class="nav-link" data-page="register">
-                        Register
+                        ➕ Register
                     </a>
                 </li>
 
                 <li>
                     <a href="#" class="nav-link" data-page="students">
-                        Students
+                        👥 Students
                     </a>
                 </li>
+
             </ul>
 
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <button
+                class="mobile-menu-btn"
+                onclick="toggleMobileMenu()"
+            >
                 ☰
             </button>
 
         </div>
+
     </nav>
 
     <!-- MAIN -->
     <main class="main-container">
 
-        <!-- HOME -->
+        <!-- HERO -->
         <section id="home-page" class="page active">
 
             <div class="hero">
@@ -65,26 +66,32 @@
                 <div class="hero-content">
 
                     <span class="hero-badge">
-                        ⚡ Student Information Management System
+                        ⚡ NEXT GEN STUDENT MANAGEMENT
                     </span>
 
                     <h1>
-                        Manage Student Records
-                        <span>Effortlessly</span>
+                        Student Management
+                        <span>Dashboard</span>
                     </h1>
 
                     <p>
-                        A modern CRUD application for managing student records.
-                        Register, update, search, and organize students easily.
+                        Manage student records with a futuristic
+                        cyber-inspired dashboard UI.
                     </p>
 
                     <div class="hero-buttons">
 
-                        <button class="btn btn-primary" onclick="navigateTo('register')">
+                        <button
+                            class="btn btn-primary"
+                            onclick="navigateTo('register')"
+                        >
                             ➕ Register Student
                         </button>
 
-                        <button class="btn btn-secondary" onclick="navigateTo('students')">
+                        <button
+                            class="btn btn-secondary"
+                            onclick="navigateTo('students')"
+                        >
                             👥 View Students
                         </button>
 
@@ -93,412 +100,3 @@
                 </div>
 
             </div>
-
-            <!-- STATS -->
-            <div class="stats-grid">
-
-                <div class="stat-card">
-
-                    <div class="stat-icon blue">👥</div>
-
-                    <div>
-                        <span class="stat-number" id="total-students">0</span>
-                        <span class="stat-label">Total Students</span>
-                    </div>
-
-                </div>
-
-                <div class="stat-card">
-
-                    <div class="stat-icon green">📊</div>
-
-                    <div>
-                        <span class="stat-number">4</span>
-                        <span class="stat-label">CRUD Operations</span>
-                    </div>
-
-                </div>
-
-                <div class="stat-card">
-
-                    <div class="stat-icon purple">☁️</div>
-
-                    <div>
-                        <span class="stat-number">Cloud</span>
-                        <span class="stat-label">Aiven Database</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- FEATURES -->
-            <div class="features-section">
-
-                <h2>System Features</h2>
-
-                <p class="features-subtitle">
-                    Complete CRUD operations for student records
-                </p>
-
-                <div class="features-grid">
-
-                    <div class="feature-card" onclick="navigateTo('register')">
-
-                        <div class="feature-icon blue">➕</div>
-
-                        <h3>Create</h3>
-
-                        <p>
-                            Register new students with complete information.
-                        </p>
-
-                    </div>
-
-                    <div class="feature-card" onclick="navigateTo('students')">
-
-                        <div class="feature-icon green">📖</div>
-
-                        <h3>Read</h3>
-
-                        <p>
-                            View all student records instantly.
-                        </p>
-
-                    </div>
-
-                    <div class="feature-card" onclick="navigateTo('students')">
-
-                        <div class="feature-icon amber">✏️</div>
-
-                        <h3>Update</h3>
-
-                        <p>
-                            Edit and manage student information.
-                        </p>
-
-                    </div>
-
-                    <div class="feature-card" onclick="navigateTo('students')">
-
-                        <div class="feature-icon red">🗑️</div>
-
-                        <h3>Delete</h3>
-
-                        <p>
-                            Remove student records securely.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- TECH STACK -->
-            <div class="tech-section">
-
-                <h2>Technology Stack</h2>
-
-                <div class="tech-grid">
-
-                    <div class="tech-item">
-                        🟢 Node.js
-                    </div>
-
-                    <div class="tech-item">
-                        📄 HTML
-                    </div>
-
-                    <div class="tech-item">
-                        🎨 CSS
-                    </div>
-
-                    <div class="tech-item">
-                        ⚡ JavaScript
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- FOOTER -->
-            <footer class="footer">
-
-                <p>Student Information Management System</p>
-
-                <p>
-                    Built with Node.js · HTML · CSS · JavaScript
-                </p>
-
-            </footer>
-
-        </section>
-
-        <!-- REGISTER PAGE -->
-        <section id="register-page" class="page">
-
-            <div class="page-header">
-
-                <div class="page-icon blue">➕</div>
-
-                <div>
-                    <h2>Register Student</h2>
-                    <p>Add a new student record</p>
-                </div>
-
-            </div>
-
-            <form id="register-form" class="form-card">
-
-                <div class="form-grid">
-
-                    <div class="form-group">
-
-                        <label>Student ID</label>
-
-                        <input
-                            type="text"
-                            id="reg-student-id"
-                            placeholder="2024-0001"
-                            required
-                        >
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label>Full Name</label>
-
-                        <input
-                            type="text"
-                            id="reg-full-name"
-                            placeholder="Juan Dela Cruz"
-                            required
-                        >
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label>Course</label>
-
-                        <select id="reg-course" required>
-
-                            <option value="">Select Course</option>
-
-                            <option value="BS Computer Science">
-                                BS Computer Science
-                            </option>
-
-                            <option value="BS Information Technology">
-                                BS Information Technology
-                            </option>
-
-                            <option value="BS Information Systems">
-                                BS Information Systems
-                            </option>
-
-                            <option value="BS Data Science">
-                                BS Data Science
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                    <div class="form-group">
-
-                        <label>Year Level</label>
-
-                        <select id="reg-year-level">
-
-                            <option value="1">1st Year</option>
-                            <option value="2">2nd Year</option>
-                            <option value="3">3rd Year</option>
-                            <option value="4">4th Year</option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-                <div class="form-group">
-
-                    <label>Email Address</label>
-
-                    <input
-                        type="email"
-                        id="reg-email"
-                        placeholder="student@email.com"
-                        required
-                    >
-
-                </div>
-
-                <div class="form-actions">
-
-                    <button
-                        type="button"
-                        class="btn btn-outline"
-                        onclick="resetForm('register-form')"
-                    >
-                        Reset
-                    </button>
-
-                    <button
-                        type="submit"
-                        class="btn btn-primary"
-                    >
-                        Register Student
-                    </button>
-
-                </div>
-
-            </form>
-
-        </section>
-
-        <!-- STUDENTS PAGE -->
-        <section id="students-page" class="page">
-
-            <div class="page-header">
-
-                <div class="page-icon blue">👥</div>
-
-                <div>
-                    <h2>Student Records</h2>
-                    <p>
-                        <span id="student-count">0</span> students found
-                    </p>
-                </div>
-
-                <button
-                    class="btn btn-primary"
-                    onclick="navigateTo('register')"
-                >
-                    ➕ Add Student
-                </button>
-
-            </div>
-
-            <!-- SEARCH -->
-            <div class="search-bar">
-
-                <span>🔍</span>
-
-                <input
-                    type="text"
-                    id="search-input"
-                    placeholder="Search students..."
-                    oninput="searchStudents()"
-                >
-
-                <button
-                    class="clear-search"
-                    onclick="clearSearch()"
-                >
-                    ✕
-                </button>
-
-            </div>
-
-            <!-- TABLE -->
-            <div class="table-container">
-
-                <table class="students-table">
-
-                    <thead>
-
-                        <tr>
-
-                            <th>Student ID</th>
-                            <th>Name</th>
-                            <th>Course</th>
-                            <th>Year</th>
-                            <th>Email</th>
-                            <th>Actions</th>
-
-                        </tr>
-
-                    </thead>
-
-                    <tbody id="students-tbody"></tbody>
-
-                </table>
-
-            </div>
-
-            <!-- EMPTY -->
-            <div id="empty-state" class="empty-state hidden">
-
-                <div class="empty-icon">👥</div>
-
-                <h3>No Students Found</h3>
-
-                <p>
-                    Register your first student now.
-                </p>
-
-                <button
-                    class="btn btn-primary"
-                    onclick="navigateTo('register')"
-                >
-                    Register Student
-                </button>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- TOAST -->
-    <div id="toast" class="toast hidden">
-
-        <span id="toast-icon"></span>
-
-        <span id="toast-message"></span>
-
-    </div>
-
-    <!-- DELETE MODAL -->
-    <div id="delete-modal" class="modal hidden">
-
-        <div class="modal-content">
-
-            <div class="modal-icon">⚠️</div>
-
-            <h3>Delete Student</h3>
-
-            <p>
-                Are you sure you want to delete this student?
-            </p>
-
-            <div class="modal-actions">
-
-                <button
-                    class="btn btn-outline"
-                    onclick="closeDeleteModal()"
-                >
-                    Cancel
-                </button>
-
-                <button
-                    class="btn btn-danger"
-                    id="confirm-delete-btn"
-                >
-                    Delete
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <script src="script.js"></script>
-
-</body>
-</html>
