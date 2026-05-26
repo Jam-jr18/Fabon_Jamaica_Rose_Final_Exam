@@ -1,6 +1,35 @@
+<!DOCTYPE html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMS - Cyber Dashboard</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
 <body>
 
-    <!-- Animated Background -->
+    <!-- Background Glow -->
+    <div class="bg-blur bg1"></div>
+    <div class="bg-blur bg2"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="nav-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMS - Cyber Dashboard</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Background Glow -->
     <div class="bg-blur bg1"></div>
     <div class="bg-blur bg2"></div>
 
@@ -9,16 +38,34 @@
 
         <div class="nav-container">
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMS - Cyber Dashboard</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Background Glow -->
+    <div class="bg-blur bg1"></div>
+    <div class="bg-blur bg2"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="nav-container">
             <div class="nav-brand">
 
-                <div class="nav-icon">
-                    🎓
-                </div>
+                <div class="nav-icon">🎓</div>
 
                 <div>
                     <h1>SIMS</h1>
-                    <p>Cyber Student Dashboard</p>
-                </div>
+                    <p>Cyber Student Dashboard</p>    </div>
 
             </div>
 
@@ -26,28 +73,25 @@
 
                 <li>
                     <a href="#" class="nav-link active" data-page="home">
-                        🏠 Home
+                        Home
                     </a>
                 </li>
 
                 <li>
                     <a href="#" class="nav-link" data-page="register">
-                        ➕ Register
+                        Register
                     </a>
                 </li>
 
                 <li>
                     <a href="#" class="nav-link" data-page="students">
-                        👥 Students
+                        Students
                     </a>
                 </li>
 
             </ul>
 
-            <button
-                class="mobile-menu-btn"
-                onclick="toggleMobileMenu()"
-            >
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
                 ☰
             </button>
 
@@ -58,7 +102,7 @@
     <!-- MAIN -->
     <main class="main-container">
 
-        <!-- HERO -->
+        <!-- HOME -->
         <section id="home-page" class="page active">
 
             <div class="hero">
@@ -75,8 +119,7 @@
                     </h1>
 
                     <p>
-                        Manage student records with a futuristic
-                        cyber-inspired dashboard UI.
+                        Manage student records with a futuristic cyber-inspired dashboard UI.
                     </p>
 
                     <div class="hero-buttons">
@@ -100,3 +143,144 @@
                 </div>
 
             </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <h2 id="total-students">0</h2>
+                    <p>Total Students</p>
+                </div>
+
+                <div class="stat-card">
+                    <h2>CRUD</h2>
+                    <p>Operations</p>
+                </div>
+
+                <div class="stat-card">
+                    <h2>Cloud</h2>
+                    <p>Database</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- REGISTER -->
+        <section id="register-page" class="page">
+
+            <div class="form-card">
+
+                <h2>Register Student</h2>
+
+                <form id="register-form">
+
+                    <div class="form-grid">
+
+                        <input type="text" id="reg-student-id" placeholder="Student ID" required>
+
+                        <input type="text" id="reg-full-name" placeholder="Full Name" required>
+
+                        <select id="reg-course" required>
+                            <option value="">Select Course</option>
+                            <option value="BS Computer Science">BS Computer Science</option>
+                            <option value="BS Information Technology">BS Information Technology</option>
+                            <option value="BS Information Systems">BS Information Systems</option>
+                        </select>
+
+                        <select id="reg-year-level" required>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+                        </select>
+
+                    </div>
+
+                    <input type="email" id="reg-email" placeholder="Email Address" required>
+
+                    <button type="submit" class="btn btn-primary full-btn">
+                        Register Student
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+        <!-- STUDENTS -->
+        <section id="students-page" class="page">
+
+            <div class="table-container">
+
+                <div class="search-bar">
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search student..."
+                        oninput="searchStudents()"
+                    >
+                </div>
+
+                <table class="students-table">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Year</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="students-tbody"></tbody>
+
+                </table>
+
+            </div>
+
+            <div id="empty-state" class="empty-state hidden">
+                <h2>No Students Found</h2>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- TOAST -->
+    <div id="toast" class="toast hidden">
+        <span id="toast-icon"></span>
+        <span id="toast-message"></span>
+    </div>
+
+    <!-- DELETE MODAL -->
+    <div id="delete-modal" class="modal hidden">
+
+        <div class="modal-content">
+
+            <h2>Delete Student?</h2>
+
+            <p>This action cannot be undone.</p>
+
+            <div class="modal-actions">
+
+                <button class="btn btn-secondary" onclick="closeDeleteModal()">
+                    Cancel
+                </button>
+
+                <button class="btn btn-danger" id="confirm-delete-btn">
+                    Delete
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
